@@ -1,0 +1,28 @@
+plugin.tx_autolinking {
+    view {
+        templateRootPaths.0 = EXT:auto_linking/Resources/Private/Templates/
+        partialRootPaths.0 = EXT:auto_linking/Resources/Private/Partials/
+        layoutRootPaths.0 = EXT:auto_linking/Resources/Private/Layouts/
+    }
+    persistence {
+        storagePid = {$plugin.tx_autolinking.persistence.storagePid}
+    }
+    settings {
+        processingMode = local
+        # Set to 'api' to use external API
+        # processingMode = api
+        
+        apiUrl = https://api.example.com/analyze
+        apiKey = your-api-key-here
+        
+        # Local processing settings
+        minSimilarity = 0.7
+        maxLinksPerPage = 10
+    }
+}
+
+module.tx_autolinking {
+    view < plugin.tx_autolinking.view
+    persistence < plugin.tx_autolinking.persistence
+    settings < plugin.tx_autolinking.settings
+}

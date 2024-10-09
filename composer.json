@@ -1,0 +1,25 @@
+{
+    "name": "talan-hdf/auto-linking",
+    "type": "typo3-cms-extension",
+    "description": "Analyzes page content and suggests links based on similarity. Supports local PHP processing and external API.",
+    "authors": [
+        {
+            "name": "Cyril Wolfangel",
+            "email": "cyril.wolfangel@gmail.com"
+        }
+    ],
+    "require": {
+        "typo3/cms-core": "^12.0",
+        "php": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TalanHdf\\AutoLinking\\": "Classes/"
+        }
+    },
+    "extra": {
+        "typo3/cms": {
+            "extension-key": "auto_linking"
+        }
+    }
+}
